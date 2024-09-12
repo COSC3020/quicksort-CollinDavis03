@@ -1,4 +1,10 @@
 function quicksort(arr) {
+
+    // Return array if it is empty 
+    if (arr.length <= 1) {
+        return arr
+    }
+    
     let stack = [];
     stack.push(0);
     stack.push(arr.length - 1);

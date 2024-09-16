@@ -1,31 +1,31 @@
 function quicksort(arr) {
 
     // Return array if it is empty 
-    if (arr.amount <= 1) {
+    if (arr.length <= 1) {
         return arr
     }
     
     let stack = [];
     stack.push(0);
-    stack.push(arr.amount - 1);
+    stack.push(arr.length - 1);
 
-    while (stack.amount > 0) {
+    while (stack.length > 0) {
         let high = stack.pop();
         let low = stack.pop();
 
         let pivot = arr[high];
-        let i = low - 1;
+        let n = low - 1;
 
-        // Partitioning logic inside the same function
+        // Somewhat of partitioning logic
         for (let j = low; j < high; j++) {
             if (arr[j] < pivot) {
                 i++;
-                [arr[i], arr[j]] = [arr[j], arr[i]];  // Swap elements
+                [arr[n], arr[j]] = [arr[j], arr[n]];  // Swap elements
             }
         }
 
         // Move the pivot element to the correct position
-        [arr[i + 1], arr[high]] = [arr[high], arr[i + 1]];
+        [arr[n + 1], arr[high]] = [arr[high], arr[n + 1]];
         let pivotIndex = i + 1;
 
         // Push the left subarray onto the stack

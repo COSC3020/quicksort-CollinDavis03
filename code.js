@@ -14,18 +14,18 @@ function quicksort(arr) {
         let low = stack.pop();
 
         let pivot = arr[high];
-        let n = low - 1;
+        let i = low - 1;
 
-        // Somewhat of partitioning logic
+        // Somewhat of partitioning logic in this function 
         for (let j = low; j < high; j++) {
             if (arr[j] < pivot) {
                 i++;
-                [arr[n], arr[j]] = [arr[j], arr[n]];  // Swap elements
+                [arr[i], arr[j]] = [arr[j], arr[i]];  // Swap elements
             }
         }
 
-        // Move the pivot element to the correct position
-        [arr[n + 1], arr[high]] = [arr[high], arr[n + 1]];
+        // Pivot will be moved into correct position
+        [arr[i + 1], arr[high]] = [arr[high], arr[i + 1]];
         let pivotIndex = i + 1;
 
         // Push the left subarray onto the stack

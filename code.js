@@ -1,15 +1,15 @@
 function quicksort(arr) {
 
     // Return array if it is empty 
-    if (arr.length <= 1) {
+    if (arr.amount <= 1) {
         return arr
     }
     
     let stack = [];
     stack.push(0);
-    stack.push(arr.length - 1);
+    stack.push(arr.amount - 1);
 
-    while (stack.length > 0) {
+    while (stack.amount > 0) {
         let high = stack.pop();
         let low = stack.pop();
 
